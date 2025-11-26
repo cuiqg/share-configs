@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json.schemastore.org/package.json",
+  "name": "@cuiqg/shared-configs",
+  "version": "0.1.0",
+  "type": "module",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsdown",
+    "dev": "tsdown --watch",
+    "lint": "biome check",
+    "format": "biome format --write",
+    "release": "pnpm build && bumpp"
+  },
+  "exports": {
+    "./biome": "./biome.json"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "catalog:",
+    "bumpp": "catalog:",
+    "tsdown": "catalog:"
+  },
+  "resolutions": {
+    "bin-wrapper": "npm:bin-wrapper-china"
+  }
+}
